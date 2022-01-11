@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/AndroidStudioProjects/GRND/app/src/main/res/drawable/custom_input.xml" value="0.2703125" />
+        <entry key="..\:/AndroidStudioProjects/GRND/app/src/main/res/layout/activity_login.xml" value="0.4742468415937804" />
+        <entry key="..\:/AndroidStudioProjects/GRND/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
+        <entry key="..\:/AndroidStudioProjects/GRND/app/src/main/res/layout/activity_register.xml" value="0.4" />
+        <entry key="..\:/AndroidStudioProjects/GRND/app/src/main/res/layout/fragment_activity.xml" value="0.25416666666666665" />
+        <entry key="..\:/AndroidStudioProjects/GRND/app/src/main/res/layout/fragment_home.xml" value="0.25416666666666665" />
+        <entry key="..\:/AndroidStudioProjects/GRND/app/src/main/res/layout/fragment_workout_list.xml" value="0.25416666666666665" />
+        <entry key="..\:/AndroidStudioProjects/GRND/app/src/main/res/layout/fragment_workout_plans.xml" value="0.25416666666666665" />
+        <entry key="..\:/AndroidStudioProjects/GRND/app/src/main/res/layout/fragment_workouts.xml" value="0.25416666666666665" />
+        <entry key="..\:/AndroidStudioProjects/GRND/app/src/main/res/layout/workouts_list_row.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Julia Coronel/AndroidStudioProjects/GRND/app/src/main/res/drawable/back.xml" value="0.19166666666666668" />
+        <entry key="..\:/Users/Julia Coronel/AndroidStudioProjects/GRND/app/src/main/res/drawable/button_square.xml" value="0.2703125" />
+        <entry key="..\:/Users/Julia Coronel/AndroidStudioProjects/GRND/app/src/main/res/drawable/rounded_layout.xml" value="0.2703125" />
+        <entry key="..\:/Users/Julia Coronel/AndroidStudioProjects/GRND/app/src/main/res/layout/activity_home.xml" value="0.264" />
+        <entry key="..\:/Users/Julia Coronel/AndroidStudioProjects/GRND/app/src/main/res/layout/activity_main.xml" value="0.4" />
+        <entry key="..\:/Users/Julia Coronel/AndroidStudioProjects/GRND/app/src/main/res/layout/activity_view_workouts.xml" value="0.264" />
+        <entry key="..\:/Users/Julia Coronel/AndroidStudioProjects/GRND/app/src/main/res/layout/fragment_activity.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Julia Coronel/AndroidStudioProjects/GRND/app/src/main/res/layout/fragment_activity_list.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Julia Coronel/AndroidStudioProjects/GRND/app/src/main/res/layout/fragment_badges.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Julia Coronel/AndroidStudioProjects/GRND/app/src/main/res/layout/fragment_blank.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Julia Coronel/AndroidStudioProjects/GRND/app/src/main/res/layout/fragment_home.xml" value="0.4" />
+        <entry key="..\:/Users/Julia Coronel/AndroidStudioProjects/GRND/app/src/main/res/layout/fragment_workout_list.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Julia Coronel/AndroidStudioProjects/GRND/app/src/main/res/layout/fragment_workout_plans.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Julia Coronel/AndroidStudioProjects/GRND/app/src/main/res/layout/fragment_workouts.xml" value="0.4" />
+        <entry key="..\:/Users/Julia Coronel/AndroidStudioProjects/GRND/app/src/main/res/layout/news_row.xml" value="0.2" />
+        <entry key="..\:/Users/Julia Coronel/AndroidStudioProjects/GRND/app/src/main/res/layout/rounded.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Julia Coronel/AndroidStudioProjects/GRND/app/src/main/res/layout/workouts_list_row.xml" value="0.2821576763485477" />
+        <entry key="..\:/Users/Julia Coronel/AndroidStudioProjects/GRND/app/src/main/res/layout/workouts_row.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Julia Coronel/AndroidStudioProjects/GRND/app/src/main/res/menu/bottom_nav.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Julia Coronel/AndroidStudioProjects/GRND/app/src/main/res/menu/workouts_nav.xml" value="0.25416666666666665" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

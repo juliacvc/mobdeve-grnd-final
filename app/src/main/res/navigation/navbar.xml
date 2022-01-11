@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navbar"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.mobdeve.s11.mco2.deleon.coronel.grnd.main_nav.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" />
+    <fragment
+        android:id="@+id/workoutsFragment"
+        android:name="com.mobdeve.s11.mco2.deleon.coronel.grnd.main_nav.WorkoutsFragment"
+        android:label="fragment_workouts"
+        tools:layout="@layout/fragment_workouts" />
+    <fragment
+        android:id="@+id/activityFragment"
+        android:name="com.mobdeve.s11.mco2.deleon.coronel.grnd.main_nav.ActivityFragment"
+        android:label="fragment_activity"
+        tools:layout="@layout/fragment_activity" />
+    <fragment
+        android:id="@+id/timerFragment"
+        android:name="com.mobdeve.s11.mco2.deleon.coronel.grnd.main_nav.TimerFragment"
+        android:label="fragment_timer"
+        tools:layout="@layout/fragment_timer" />
+</navigation>
