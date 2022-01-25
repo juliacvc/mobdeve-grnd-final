@@ -3,6 +3,7 @@ package com.mobdeve.s11.mco2.deleon.coronel.grnd.main_nav
 import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
+import android.content.IntentFilter
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -27,15 +28,20 @@ class TimerFragment : Fragment() {
         binding = FragmentTimerBinding.inflate(inflater, container, false)
         val view = binding.root
 
-        //INSERT CODE HERE
         binding.startStopButton.setOnClickListener {startStopTimer()}
         binding.resetButton.setOnClickListener {resetTimer()}
 
-        serviceIntent = Intent(applicationContext, TimerService::class.java)
-        registerReceiver(updateTime, IntentFilter(TimerService.TIMER_UPDATED))
+        serviceIntent = Intent(activity?.applicationContext, TimerService::class.java)
+        requireActivity().registerReceiver(updateTime, IntentFilter(TimerService.TIMER_UPDATED))
 
         return view
     }
+
+//    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+//        super.onViewCreated(view, savedInstanceState)
+//
+//
+//    }
 
     private fun resetTimer()
     {
@@ -55,17 +61,17 @@ class TimerFragment : Fragment() {
     private fun startTimer()
     {
         serviceIntent.putExtra(TimerService.TIME_EXTRA, time)
-        startService(serviceIntent)
+        requireActivity().startService(serviceIntent)
         binding.startStopButton.text = "Stop"
-        binding.startStopButton.icon = getDrawable(R.drawable.ic_pause)
+        binding.startStopButton.icon = resources.getDrawable(R.drawable.ic_pause)
         timerStarted = true
     }
 
     private fun stopTimer()
     {
-        stopService(serviceIntent)
+        requireActivity().stopService(serviceIntent)
         binding.startStopButton.text = "Start"
-        binding.startStopButton.icon = getDrawable(R.drawable.ic_play)
+        binding.startStopButton.icon = resources.getDrawable(R.drawable.ic_play)
         timerStarted = false
     }
 
