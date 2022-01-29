@@ -4,17 +4,20 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/AndroidStudioProjects/GRND/app/src/main/res/drawable/custom_input.xml" value="0.2703125" />
+        <entry key="..\:/AndroidStudioProjects/GRND/app/src/main/res/drawable/round_button.xml" value="0.2703125" />
+        <entry key="..\:/AndroidStudioProjects/GRND/app/src/main/res/drawable/rounded_layout.xml" value="0.2703125" />
         <entry key="..\:/AndroidStudioProjects/GRND/app/src/main/res/layout/activity_login.xml" value="0.4742468415937804" />
         <entry key="..\:/AndroidStudioProjects/GRND/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
         <entry key="..\:/AndroidStudioProjects/GRND/app/src/main/res/layout/activity_register.xml" value="0.4" />
         <entry key="..\:/AndroidStudioProjects/GRND/app/src/main/res/layout/fragment_activity.xml" value="0.25416666666666665" />
         <entry key="..\:/AndroidStudioProjects/GRND/app/src/main/res/layout/fragment_home.xml" value="0.25416666666666665" />
+        <entry key="..\:/AndroidStudioProjects/GRND/app/src/main/res/layout/fragment_timer.xml" value="0.25416666666666665" />
         <entry key="..\:/AndroidStudioProjects/GRND/app/src/main/res/layout/fragment_workout_list.xml" value="0.25416666666666665" />
         <entry key="..\:/AndroidStudioProjects/GRND/app/src/main/res/layout/fragment_workout_plans.xml" value="0.25416666666666665" />
         <entry key="..\:/AndroidStudioProjects/GRND/app/src/main/res/layout/fragment_workouts.xml" value="0.25416666666666665" />
+        <entry key="..\:/AndroidStudioProjects/GRND/app/src/main/res/layout/nav_header.xml" value="0.4" />
         <entry key="..\:/AndroidStudioProjects/GRND/app/src/main/res/layout/workouts_list_row.xml" value="0.25416666666666665" />
-        <entry key="..\:/MY FILES/Code/For School/MOBDEVE/mobdeve-grnd-final/app/src/main/res/drawable/ic_timer.xml" value="0.3074074074074074" />
-        <entry key="..\:/MY FILES/Code/For School/MOBDEVE/mobdeve-grnd-final/app/src/main/res/layout/fragment_timer.xml" value="0.36666666666666664" />
+        <entry key="..\:/AndroidStudioProjects/GRND/app/src/main/res/menu/nav_menu.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Julia Coronel/AndroidStudioProjects/GRND/app/src/main/res/drawable/back.xml" value="0.19166666666666668" />
         <entry key="..\:/Users/Julia Coronel/AndroidStudioProjects/GRND/app/src/main/res/drawable/button_square.xml" value="0.2703125" />
         <entry key="..\:/Users/Julia Coronel/AndroidStudioProjects/GRND/app/src/main/res/drawable/rounded_layout.xml" value="0.2703125" />
