@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -7,23 +8,31 @@
 
     <LinearLayout
         android:orientation="vertical"
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/timer_bg2"
         tools:showIn="@layout/activity_main">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="80dp"
+            android:text="Timer"
+            android:fontFamily="@font/roboto"
+            android:textStyle="bold"
+            android:textColor="#35858B"
+            android:textSize="50sp"
+            android:gravity="center" />
 
         <TextView
             android:id="@+id/timeTV"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="00:00:00"
+            android:layout_marginTop="20dp"
             android:padding="10dp"
+            android:text="00:00:00"
+            android:textAlignment="center"
             android:textColor="@color/black"
-            android:textSize="60sp"
-            android:textAlignment="center"/>
+            android:textSize="60sp" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -32,10 +41,14 @@
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/startStopButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Start"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:paddingRight="20dp"
+                app:iconSize="50dp"
+                app:iconGravity="textEnd"
                 app:icon="@drawable/ic_play"
+                app:backgroundTint="#4FBDBA"
+                android:background="@drawable/round_button"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toStartOf="@id/resetButton"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -43,10 +56,14 @@
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/resetButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Reset"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:paddingRight="20dp"
+                app:iconSize="50dp"
+                app:iconGravity="textEnd"
                 app:icon="@drawable/ic_replay"
+                app:backgroundTint="#4FBDBA"
+                android:background="@drawable/round_button"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toEndOf="@id/startStopButton"

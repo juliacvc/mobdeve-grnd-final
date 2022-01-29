@@ -62,7 +62,6 @@ class TimerFragment : Fragment() {
     {
         serviceIntent.putExtra(TimerService.TIME_EXTRA, time)
         requireActivity().startService(serviceIntent)
-        binding.startStopButton.text = "Stop"
         binding.startStopButton.icon = resources.getDrawable(R.drawable.ic_pause)
         timerStarted = true
     }
@@ -70,7 +69,6 @@ class TimerFragment : Fragment() {
     private fun stopTimer()
     {
         requireActivity().stopService(serviceIntent)
-        binding.startStopButton.text = "Start"
         binding.startStopButton.icon = resources.getDrawable(R.drawable.ic_play)
         timerStarted = false
     }
