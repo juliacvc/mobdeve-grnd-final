@@ -6,32 +6,51 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".main_nav.ActivityFragment">
 
-    <com.google.android.material.tabs.TabLayout
-        android:id="@+id/tabLayout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+    <TextView
+        android:id="@+id/workoutsTotal"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:text="0"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:background="@drawable/round_button"
         app:layout_constraintTop_toTopOf="parent"
-        android:background="#4FBDBA"
-        app:tabIndicatorColor="#AEFEFF"
-        app:tabSelectedTextColor="#AEFEFF"
-        app:tabTextColor="#072227">
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
 
-        <com.google.android.material.tabs.TabItem
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Activity" />
-
-        <com.google.android.material.tabs.TabItem
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Badges" />
-
-    </com.google.android.material.tabs.TabLayout>
-
-    <androidx.viewpager.widget.ViewPager
-        android:id="@+id/viewPager"
-        android:layout_width="match_parent"
+    <TextView
+        android:id="@+id/titleWorkouts"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/tabLayout"/>
+        android:layout_marginTop="10dp"
+        android:text="Total Workouts"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        app:layout_constraintTop_toBottomOf="@+id/workoutsTotal"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"/>
+
+    <View
+        android:id="@+id/line"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/underline"
+        app:layout_constraintTop_toBottomOf="@+id/titleWorkouts"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="No Workouts to Display"
+        android:textStyle="italic"
+        android:textSize="18sp"
+        app:layout_constraintTop_toBottomOf="@+id/line"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"/>
+
+    <!--    Insert Recycler View Here -->
 
 </androidx.constraintlayout.widget.ConstraintLayout>

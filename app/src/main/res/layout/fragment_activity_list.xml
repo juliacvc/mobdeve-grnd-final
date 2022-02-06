@@ -7,11 +7,6 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".workouts_nav.WorkoutListFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="ACTIVITY" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
