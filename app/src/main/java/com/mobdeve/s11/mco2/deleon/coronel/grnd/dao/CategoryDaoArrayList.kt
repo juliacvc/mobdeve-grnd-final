@@ -14,23 +14,23 @@ class CategoryDaoArrayList : CategoryDAO {
         workoutList.add(CategoryModel("CORE"))
     }
 
-    override fun addWorkout(workout: CategoryModel?): Long {
-        workoutList.add(workout!!)
+    override fun addWorkout(category: CategoryModel?): Long {
+        workoutList.add(category!!)
 
         return 1L
     }
 
     override fun getWorkouts(): ArrayList<CategoryModel?>? = workoutList
 
-    override fun getWorkouts(workoutId: Int): CategoryModel? {
+    override fun getWorkouts(categoryId: Int): CategoryModel? {
         TODO("Not yet implemented")
     }
 
-    override fun updateWorkouts(workout: CategoryModel?): Int {
+    override fun updateWorkouts(category: CategoryModel?): Int {
         TODO("Not yet implemented")
     }
 
-    override fun deleteWorkout(workoutId: Int): Int {
+    override fun deleteWorkout(categoryId: Int): Int {
         TODO("Not yet implemented")
     }
 }
