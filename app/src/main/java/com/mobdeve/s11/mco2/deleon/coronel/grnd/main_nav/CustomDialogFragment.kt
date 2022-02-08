@@ -15,9 +15,8 @@ class CustomDialogFragment: DialogFragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        var rootView: View = inflater.inflate(R.layout.custom_popup_dialogue, container, false)
+        val rootView: View = inflater.inflate(R.layout.custom_popup_dialogue, container, false)
 
         return rootView
     }
-
 }

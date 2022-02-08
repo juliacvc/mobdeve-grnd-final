@@ -29,7 +29,7 @@ class WorkoutPlansFragment : Fragment() {
 
         populateList()
 
-        categoryAdapter = CategoryAdapter(workoutList)
+        categoryAdapter = CategoryAdapter(requireActivity().getApplicationContext() ,workoutList)
 
         binding.workoutPlanView.layoutManager = LinearLayoutManager(activity, LinearLayoutManager.VERTICAL, false)
         binding.workoutPlanView.adapter = categoryAdapter
