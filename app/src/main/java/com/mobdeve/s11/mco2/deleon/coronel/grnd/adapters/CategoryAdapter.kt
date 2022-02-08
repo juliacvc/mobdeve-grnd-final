@@ -13,17 +13,20 @@ import com.mobdeve.s11.mco2.deleon.coronel.grnd.databinding.WorkoutsListRowBindi
 import com.mobdeve.s11.mco2.deleon.coronel.grnd.main_nav.CustomDialogFragment
 import com.mobdeve.s11.mco2.deleon.coronel.grnd.models.CategoryModel
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.FragmentManager
 import com.mobdeve.s11.mco2.deleon.coronel.grnd.R
 import com.mobdeve.s11.mco2.deleon.coronel.grnd.workouts_nav.WorkoutListFragment
 
 
-class CategoryAdapter(var context: Context ,private val workoutList: ArrayList<CategoryModel?>): RecyclerView.Adapter<CategoryAdapter.ViewHolder>() {
+class CategoryAdapter(var context: Context ,
+                      private val workoutList: ArrayList<CategoryModel?>,
+                      private val onItemClicked: (CategoryModel)->Unit
+): RecyclerView.Adapter<CategoryAdapter.ViewHolder>() {
     inner class ViewHolder(private val itemBinding: WorkoutsListRowBinding): RecyclerView.ViewHolder(itemBinding.root) {
 
 
         fun bindItem(item: CategoryModel, position: Int) {
             itemBinding.workoutItem.text = item.name
-            (this as AppCompatActivity).supportFragmentManager
 
             if (position % 2 == 0) {
                 itemBinding.workoutItem.setBackgroundColor(Color.parseColor("#072227"))
@@ -34,11 +37,7 @@ class CategoryAdapter(var context: Context ,private val workoutList: ArrayList<C
                 itemBinding.workoutItem.setTextColor(Color.parseColor("#000000"))
             }
             itemBinding.workoutItem.setOnClickListener{
-                var dialog = CustomDialogFragment()
-
-                dialog.show(supportFragmentManager, "customDialog")
-
-                Snackbar.make(itemView, "${item.name}", Snackbar.LENGTH_SHORT).show()
+                onItemClicked(item)
             }
 
         }

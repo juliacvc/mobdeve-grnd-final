@@ -18,5 +18,9 @@ class CustomDialogFragment: DialogFragment() {
         val rootView: View = inflater.inflate(R.layout.custom_popup_dialogue, container, false)
 
         return rootView
+
+
     }
+
+
 }

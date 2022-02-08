@@ -6,12 +6,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.mobdeve.s11.mco2.deleon.coronel.grnd.R
+import com.google.android.material.snackbar.Snackbar
 import com.mobdeve.s11.mco2.deleon.coronel.grnd.adapters.CategoryAdapter
 import com.mobdeve.s11.mco2.deleon.coronel.grnd.dao.CategoryDAO
 import com.mobdeve.s11.mco2.deleon.coronel.grnd.dao.CategoryDaoArrayList
-import com.mobdeve.s11.mco2.deleon.coronel.grnd.databinding.FragmentWorkoutListBinding
 import com.mobdeve.s11.mco2.deleon.coronel.grnd.databinding.FragmentWorkoutPlansBinding
+import com.mobdeve.s11.mco2.deleon.coronel.grnd.main_nav.CustomDialogFragment
 import com.mobdeve.s11.mco2.deleon.coronel.grnd.models.CategoryModel
 
 class WorkoutPlansFragment : Fragment() {
@@ -29,7 +29,10 @@ class WorkoutPlansFragment : Fragment() {
 
         populateList()
 
-        categoryAdapter = CategoryAdapter(requireActivity().getApplicationContext() ,workoutList)
+        categoryAdapter = CategoryAdapter(requireActivity(), workoutList) { clickedItem ->
+            val dialog = CustomDialogFragment()
+            dialog.show(requireActivity().supportFragmentManager, "customDialog")
+        }
 
         binding.workoutPlanView.layoutManager = LinearLayoutManager(activity, LinearLayoutManager.VERTICAL, false)
         binding.workoutPlanView.adapter = categoryAdapter
