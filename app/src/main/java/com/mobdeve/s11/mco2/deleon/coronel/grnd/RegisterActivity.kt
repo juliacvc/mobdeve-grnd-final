@@ -3,11 +3,8 @@ package com.mobdeve.s11.mco2.deleon.coronel.grnd
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.widget.Toast
 import com.google.firebase.database.*
-import com.google.firebase.database.ktx.database
-import com.google.firebase.ktx.Firebase
 import com.mobdeve.s11.mco2.deleon.coronel.grnd.databinding.ActivityRegisterBinding
 import com.mobdeve.s11.mco2.deleon.coronel.grnd.models.User
 

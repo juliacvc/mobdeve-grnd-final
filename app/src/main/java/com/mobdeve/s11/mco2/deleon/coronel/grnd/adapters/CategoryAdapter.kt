@@ -1,5 +1,6 @@
 package com.mobdeve.s11.mco2.deleon.coronel.grnd.adapters
 
+import android.content.Context
 import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -9,7 +10,10 @@ import com.google.android.material.snackbar.Snackbar
 import com.mobdeve.s11.mco2.deleon.coronel.grnd.databinding.WorkoutsListRowBinding
 import com.mobdeve.s11.mco2.deleon.coronel.grnd.models.CategoryModel
 
-class CategoryAdapter(private val workoutList: ArrayList<CategoryModel?>): RecyclerView.Adapter<CategoryAdapter.ViewHolder>() {
+class CategoryAdapter(var context: Context,
+                      private val workoutList: ArrayList<CategoryModel?>,
+                      private val onItemClicked: (CategoryModel)->Unit
+): RecyclerView.Adapter<CategoryAdapter.ViewHolder>() {
     inner class ViewHolder(private val itemBinding: WorkoutsListRowBinding): RecyclerView.ViewHolder(itemBinding.root) {
 
         fun bindItem(item: CategoryModel, position: Int) {
@@ -22,6 +26,10 @@ class CategoryAdapter(private val workoutList: ArrayList<CategoryModel?>): Recyc
             else {
                 itemBinding.workoutItem.setBackgroundColor(Color.parseColor("#FFFFFF"))
                 itemBinding.workoutItem.setTextColor(Color.parseColor("#000000"))
+            }
+
+            itemBinding.workoutItem.setOnClickListener{
+                onItemClicked(item)
             }
         }
     }
