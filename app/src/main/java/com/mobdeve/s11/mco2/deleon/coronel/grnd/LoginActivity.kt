@@ -24,7 +24,7 @@ class LoginActivity : AppCompatActivity() {
         binding.loginBtn.setOnClickListener{
             var goToMainActivity = Intent(applicationContext, MainActivity::class.java)
 
-            if(binding.emailaddress.text.isEmpty() && binding.password.text.isEmpty() ) {
+            if(binding.emailaddress.text.isEmpty() || binding.password.text.isEmpty() ) {
                 Toast.makeText(applicationContext, "Incorrect user details. Kindly try again.", Toast.LENGTH_LONG).show()
             }
             else {
