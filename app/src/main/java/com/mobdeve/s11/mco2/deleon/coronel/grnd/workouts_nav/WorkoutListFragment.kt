@@ -30,7 +30,7 @@ class WorkoutListFragment : Fragment() {
         populateList()
 
         categoryAdapter = CategoryAdapter(requireActivity(), workoutList) { clickedItem ->
-            val dialog = CustomDialogFragment()
+            val dialog = CustomDialogFragment(clickedItem.name)
             dialog.show(requireActivity().supportFragmentManager, "customDialog")
         }
 

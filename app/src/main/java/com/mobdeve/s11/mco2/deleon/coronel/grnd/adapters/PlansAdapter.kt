@@ -4,6 +4,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.mobdeve.s11.mco2.deleon.coronel.grnd.databinding.WorkoutsRowBinding
+import com.mobdeve.s11.mco2.deleon.coronel.grnd.databinding.WorkoutsRowPopupBinding
 import com.mobdeve.s11.mco2.deleon.coronel.grnd.models.WorkoutPlanModel
 
 class PlansAdapter(private val workoutList: ArrayList<WorkoutPlanModel?>): RecyclerView.Adapter<PlansAdapter.ViewHolder>() {

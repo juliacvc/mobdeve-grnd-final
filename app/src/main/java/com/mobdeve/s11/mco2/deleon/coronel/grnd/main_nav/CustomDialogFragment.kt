@@ -9,16 +9,21 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.mobdeve.s11.mco2.deleon.coronel.grnd.R
 import com.mobdeve.s11.mco2.deleon.coronel.grnd.adapters.PlansAdapter
+import com.mobdeve.s11.mco2.deleon.coronel.grnd.adapters.WorkoutAdapter
 import com.mobdeve.s11.mco2.deleon.coronel.grnd.dao.PlansDAO
 import com.mobdeve.s11.mco2.deleon.coronel.grnd.dao.PlansDaoArrayList
+import com.mobdeve.s11.mco2.deleon.coronel.grnd.dao.WorkoutDAO
+import com.mobdeve.s11.mco2.deleon.coronel.grnd.dao.WorkoutDaoArrayList
 import com.mobdeve.s11.mco2.deleon.coronel.grnd.databinding.FragmentCustomDialogBinding
 import com.mobdeve.s11.mco2.deleon.coronel.grnd.databinding.FragmentHomeBinding
+import com.mobdeve.s11.mco2.deleon.coronel.grnd.models.WorkoutModel
 import com.mobdeve.s11.mco2.deleon.coronel.grnd.models.WorkoutPlanModel
 
-class CustomDialogFragment: DialogFragment() {
+class CustomDialogFragment(title: String): DialogFragment() {
     private lateinit var binding: FragmentCustomDialogBinding
-    var plansList = ArrayList<WorkoutPlanModel?>()
-    var plansDAO: PlansDAO = PlansDaoArrayList()
+    var workoutsList = ArrayList<WorkoutModel?>()
+    var workoutDAO: WorkoutDAO = WorkoutDaoArrayList()
+    var categoryTitle = title
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -28,11 +33,12 @@ class CustomDialogFragment: DialogFragment() {
         binding = FragmentCustomDialogBinding.inflate(inflater, container, false)
         val view = binding.root
 
-        plansList = plansDAO.getPlans()!!
+        workoutsList = workoutDAO.getWorkouts()!!
 
-        var plansAdapter = PlansAdapter(plansList)
+        var workoutAdapter = WorkoutAdapter(workoutsList)
+        binding.workoutCategory.text = "$categoryTitle WORKOUTS"
         binding.workoutsList.layoutManager = GridLayoutManager(activity, 2)
-        binding.workoutsList.adapter = plansAdapter
+        binding.workoutsList.adapter = workoutAdapter
 
         return view
     }

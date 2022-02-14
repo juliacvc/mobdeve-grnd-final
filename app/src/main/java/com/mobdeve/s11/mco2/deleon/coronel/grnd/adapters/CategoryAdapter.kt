@@ -1,13 +1,16 @@
 package com.mobdeve.s11.mco2.deleon.coronel.grnd.adapters
 
 import android.content.Context
+import android.content.Intent
 import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.mobdeve.s11.mco2.deleon.coronel.grnd.dao.PlansDAO
 import com.mobdeve.s11.mco2.deleon.coronel.grnd.dao.PlansDaoArrayList
 import com.mobdeve.s11.mco2.deleon.coronel.grnd.databinding.WorkoutsListRowBinding
+import com.mobdeve.s11.mco2.deleon.coronel.grnd.main_nav.CustomDialogFragment
 import com.mobdeve.s11.mco2.deleon.coronel.grnd.models.CategoryModel
 import com.mobdeve.s11.mco2.deleon.coronel.grnd.models.WorkoutPlanModel
 
