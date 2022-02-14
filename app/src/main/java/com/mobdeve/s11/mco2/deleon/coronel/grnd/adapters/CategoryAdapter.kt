@@ -1,30 +1,23 @@
 package com.mobdeve.s11.mco2.deleon.coronel.grnd.adapters
 
-import android.app.Dialog
 import android.content.Context
 import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import android.view.Window
-import androidx.fragment.app.FragmentActivity
 import androidx.recyclerview.widget.RecyclerView
-import com.google.android.material.snackbar.Snackbar
+import com.mobdeve.s11.mco2.deleon.coronel.grnd.dao.PlansDAO
+import com.mobdeve.s11.mco2.deleon.coronel.grnd.dao.PlansDaoArrayList
 import com.mobdeve.s11.mco2.deleon.coronel.grnd.databinding.WorkoutsListRowBinding
-import com.mobdeve.s11.mco2.deleon.coronel.grnd.main_nav.CustomDialogFragment
 import com.mobdeve.s11.mco2.deleon.coronel.grnd.models.CategoryModel
-import androidx.appcompat.app.AppCompatActivity
-import androidx.fragment.app.FragmentManager
-import com.mobdeve.s11.mco2.deleon.coronel.grnd.R
-import com.mobdeve.s11.mco2.deleon.coronel.grnd.workouts_nav.WorkoutListFragment
+import com.mobdeve.s11.mco2.deleon.coronel.grnd.models.WorkoutPlanModel
 
 
 class CategoryAdapter(var context: Context ,
                       private val workoutList: ArrayList<CategoryModel?>,
                       private val onItemClicked: (CategoryModel)->Unit
 ): RecyclerView.Adapter<CategoryAdapter.ViewHolder>() {
+
     inner class ViewHolder(private val itemBinding: WorkoutsListRowBinding): RecyclerView.ViewHolder(itemBinding.root) {
-
-
         fun bindItem(item: CategoryModel, position: Int) {
             itemBinding.workoutItem.text = item.name
 
@@ -36,6 +29,7 @@ class CategoryAdapter(var context: Context ,
                 itemBinding.workoutItem.setBackgroundColor(Color.parseColor("#FFFFFF"))
                 itemBinding.workoutItem.setTextColor(Color.parseColor("#000000"))
             }
+
             itemBinding.workoutItem.setOnClickListener{
                 onItemClicked(item)
             }

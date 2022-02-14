@@ -5,21 +5,36 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.DialogFragment
+import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.mobdeve.s11.mco2.deleon.coronel.grnd.R
-import com.mobdeve.s11.mco2.deleon.coronel.grnd.databinding.ActivityLoginBinding.inflate
+import com.mobdeve.s11.mco2.deleon.coronel.grnd.adapters.PlansAdapter
+import com.mobdeve.s11.mco2.deleon.coronel.grnd.dao.PlansDAO
+import com.mobdeve.s11.mco2.deleon.coronel.grnd.dao.PlansDaoArrayList
+import com.mobdeve.s11.mco2.deleon.coronel.grnd.databinding.FragmentCustomDialogBinding
+import com.mobdeve.s11.mco2.deleon.coronel.grnd.databinding.FragmentHomeBinding
+import com.mobdeve.s11.mco2.deleon.coronel.grnd.models.WorkoutPlanModel
 
 class CustomDialogFragment: DialogFragment() {
+    private lateinit var binding: FragmentCustomDialogBinding
+    var plansList = ArrayList<WorkoutPlanModel?>()
+    var plansDAO: PlansDAO = PlansDaoArrayList()
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val rootView: View = inflater.inflate(R.layout.custom_popup_dialogue, container, false)
+        binding = FragmentCustomDialogBinding.inflate(inflater, container, false)
+        val view = binding.root
 
-        return rootView
+        plansList = plansDAO.getPlans()!!
 
+        var plansAdapter = PlansAdapter(plansList)
+        binding.workoutsList.layoutManager = GridLayoutManager(activity, 2)
+        binding.workoutsList.adapter = plansAdapter
 
+        return view
     }
 
 
