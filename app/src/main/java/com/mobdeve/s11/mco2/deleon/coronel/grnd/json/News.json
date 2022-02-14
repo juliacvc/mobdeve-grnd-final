@@ -1,0 +1,19 @@
+{
+  "News":[
+    {
+      "id": 1,
+      "image": "news1",
+      "headline": "BREAKING NEWS 1"
+    },
+    {
+      "id": 2,
+      "image": "news2",
+      "headline": "BREAKING NEWS 2"
+    },
+    {
+      "id": 3,
+      "image": "news3",
+      "headline": "BREAKING NEWS 3"
+    }
+  ]
+}

@@ -1,7 +1,7 @@
 package com.mobdeve.s11.mco2.deleon.coronel.grnd.models
 
-class NewsModel (
+class NewsModel(
     var id: Int,
-    var image: Int,
+    var image: String,
     var headline: String
 )
