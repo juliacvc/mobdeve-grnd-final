@@ -53,6 +53,8 @@
             android:layout_marginTop="5dp"
             android:layout_gravity="bottom"
             tools:listitem="@layout/workouts_row_popup"
-            app:layout_constraintTop_toBottomOf="@id/linearLayout"/>
+            app:layout_constraintTop_toBottomOf="@id/linearLayout"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>
