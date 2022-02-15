@@ -5,12 +5,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.DialogFragment
-import androidx.fragment.app.FragmentManager
-import androidx.fragment.app.FragmentTransaction
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.database.*
-import com.mobdeve.s11.mco2.deleon.coronel.grnd.WorkoutPageFragment
 import com.mobdeve.s11.mco2.deleon.coronel.grnd.adapters.WorkoutAdapter
 import com.mobdeve.s11.mco2.deleon.coronel.grnd.databinding.FragmentCustomDialogBinding
 import com.mobdeve.s11.mco2.deleon.coronel.grnd.models.WorkoutModel
@@ -65,7 +62,7 @@ class CustomDialogFragment(title: String): DialogFragment() {
 
                     if (workout.category.equals(categoryTitle, ignoreCase = true))
                         workoutsList.add(workout)
-                    workoutsRecyclerView.adapter = WorkoutAdapter(workoutsList)
+                    workoutsRecyclerView.adapter = WorkoutAdapter(workoutsList, context!!)
                 }
             }
 
