@@ -5,22 +5,22 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.storage.FirebaseStorage
-import com.mobdeve.s11.mco2.deleon.coronel.grnd.databinding.WorkoutsRowBinding
-import com.mobdeve.s11.mco2.deleon.coronel.grnd.models.WorkoutPlanModel
+import com.mobdeve.s11.mco2.deleon.coronel.grnd.databinding.WorkoutsRowPopupBinding
+import com.mobdeve.s11.mco2.deleon.coronel.grnd.models.WorkoutModel
 import java.io.File
 
-class PlansAdapter(private val workoutList: ArrayList<WorkoutPlanModel?>): RecyclerView.Adapter<PlansAdapter.ViewHolder>() {
-    inner class ViewHolder(private val itemBinding: WorkoutsRowBinding): RecyclerView.ViewHolder(itemBinding.root) {
+class WorkoutAdapter(private val workoutList: ArrayList<WorkoutModel?>): RecyclerView.Adapter<WorkoutAdapter.ViewHolder>() {
+    inner class ViewHolder(private val itemBinding: WorkoutsRowPopupBinding): RecyclerView.ViewHolder(itemBinding.root) {
 
         val image = itemBinding.workoutImage
-
-//        fun bindItem(item: WorkoutPlanModel, position: Int) {
+        val title = itemBinding.workoutTitle
+//        fun bindItem(item: WorkoutModel, position: Int) {
 //            itemBinding.workoutImage.setImageResource(item.image)
 //        }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val itemBinding = WorkoutsRowBinding
+        val itemBinding = WorkoutsRowPopupBinding
             .inflate(LayoutInflater.from(parent.context), parent, false)
 
         return ViewHolder(itemBinding)
@@ -32,8 +32,9 @@ class PlansAdapter(private val workoutList: ArrayList<WorkoutPlanModel?>): Recyc
 //        holder.bindItem(workoutList[position]!!, position)
 
         val currentItem = workoutList[position]
+        holder.title.text = currentItem!!.name
 
-        val storageRef = FirebaseStorage.getInstance().reference.child("Plans/${currentItem!!.image}.jpeg")
+        val storageRef = FirebaseStorage.getInstance().reference.child("Workouts/${currentItem!!.image}.jpeg")
         val localfile = File.createTempFile("tempImage", "jpeg")
         storageRef.getFile(localfile).addOnSuccessListener {
             val bitmap = BitmapFactory.decodeFile(localfile.absolutePath)
