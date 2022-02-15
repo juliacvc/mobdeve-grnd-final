@@ -5,9 +5,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.DialogFragment
+import androidx.fragment.app.FragmentManager
+import androidx.fragment.app.FragmentTransaction
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.database.*
+import com.mobdeve.s11.mco2.deleon.coronel.grnd.WorkoutPageFragment
 import com.mobdeve.s11.mco2.deleon.coronel.grnd.adapters.WorkoutAdapter
 import com.mobdeve.s11.mco2.deleon.coronel.grnd.databinding.FragmentCustomDialogBinding
 import com.mobdeve.s11.mco2.deleon.coronel.grnd.models.WorkoutModel
@@ -17,7 +20,6 @@ class CustomDialogFragment(title: String): DialogFragment() {
     private lateinit var dbref: DatabaseReference
     private lateinit var workoutsRecyclerView: RecyclerView
     var workoutsList = ArrayList<WorkoutModel?>()
-//    var workoutDAO: WorkoutDAO = WorkoutDaoArrayList()
     var categoryTitle = title
 
     override fun onCreateView(
@@ -38,6 +40,11 @@ class CustomDialogFragment(title: String): DialogFragment() {
         workoutsRecyclerView.layoutManager = LinearLayoutManager(activity, LinearLayoutManager.VERTICAL, false)
 
         getWorkoutsData()
+
+//        val fragment = WorkoutPageFragment()
+//        val transaction: FragmentTransaction = childFragmentManager.beginTransaction()
+//        transaction.replace(R.id.action_container, fragment)
+//        transaction.commit()
     }
 
     private fun getWorkoutsData() {
