@@ -17,7 +17,6 @@ class CustomDialogFragment(title: String): DialogFragment() {
     private lateinit var dbref: DatabaseReference
     private lateinit var workoutsRecyclerView: RecyclerView
     var workoutsList = ArrayList<WorkoutModel?>()
-//    var workoutDAO: WorkoutDAO = WorkoutDaoArrayList()
     var categoryTitle = title
 
     override fun onCreateView(
@@ -38,6 +37,11 @@ class CustomDialogFragment(title: String): DialogFragment() {
         workoutsRecyclerView.layoutManager = LinearLayoutManager(activity, LinearLayoutManager.VERTICAL, false)
 
         getWorkoutsData()
+
+//        val fragment = WorkoutPageFragment()
+//        val transaction: FragmentTransaction = childFragmentManager.beginTransaction()
+//        transaction.replace(R.id.action_container, fragment)
+//        transaction.commit()
     }
 
     private fun getWorkoutsData() {
@@ -58,7 +62,7 @@ class CustomDialogFragment(title: String): DialogFragment() {
 
                     if (workout.category.equals(categoryTitle, ignoreCase = true))
                         workoutsList.add(workout)
-                    workoutsRecyclerView.adapter = WorkoutAdapter(workoutsList)
+                    workoutsRecyclerView.adapter = WorkoutAdapter(workoutsList, context!!)
                 }
             }
 
