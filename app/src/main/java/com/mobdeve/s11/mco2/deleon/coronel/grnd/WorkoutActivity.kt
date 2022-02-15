@@ -3,12 +3,20 @@ package com.mobdeve.s11.mco2.deleon.coronel.grnd
 import android.graphics.BitmapFactory
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Button
+import com.google.android.youtube.player.YouTubePlayer
+import com.google.android.youtube.player.YouTubePlayerView
 import com.google.firebase.storage.FirebaseStorage
 import com.mobdeve.s11.mco2.deleon.coronel.grnd.databinding.ActivityWorkoutBinding
 import java.io.File
 
 class WorkoutActivity : AppCompatActivity() {
     private lateinit var binding: ActivityWorkoutBinding
+    private lateinit var youtubePlayer: YouTubePlayerView
+    private lateinit var btnStart: Button
+    val youtubeAPI = "AIzaSyAI_hATIvMcy-kJXQTdJAccysyDuThJm0w"
+
+    lateinit var  youtubePlayerInit: YouTubePlayer.OnInitializedListener
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
