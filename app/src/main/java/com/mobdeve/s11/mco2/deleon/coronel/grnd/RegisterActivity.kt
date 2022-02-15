@@ -4,13 +4,17 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
 import com.mobdeve.s11.mco2.deleon.coronel.grnd.databinding.ActivityRegisterBinding
 import com.mobdeve.s11.mco2.deleon.coronel.grnd.models.User
 
 class RegisterActivity : AppCompatActivity() {
     private lateinit var binding: ActivityRegisterBinding
+
     private lateinit var database: DatabaseReference
+    var firebase: FirebaseDatabase?  =null
+    lateinit var auth: FirebaseAuth
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -38,6 +42,7 @@ class RegisterActivity : AppCompatActivity() {
                 val email = binding.emailaddress.text.toString()
                 val password = binding.password.text.toString()
 
+                firebase = FirebaseDatabase.getInstance()
                 database = FirebaseDatabase.getInstance().getReference("Users")
                 val user = User(firstname, lastname, gender, birthday, contactnumber, email, password)
 
