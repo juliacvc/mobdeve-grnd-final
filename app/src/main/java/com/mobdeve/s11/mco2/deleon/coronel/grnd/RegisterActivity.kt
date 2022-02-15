@@ -14,7 +14,7 @@ class RegisterActivity : AppCompatActivity() {
 
     private lateinit var database: DatabaseReference
     var firebase: FirebaseDatabase?  =null
-    lateinit var auth: FirebaseAuth
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

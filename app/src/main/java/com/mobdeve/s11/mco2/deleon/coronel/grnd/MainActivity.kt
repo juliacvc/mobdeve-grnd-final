@@ -12,8 +12,7 @@ import androidx.navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.navigation.NavigationView
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.database.DatabaseReference
-import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.*
 import com.mobdeve.s11.mco2.deleon.coronel.grnd.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -36,7 +35,7 @@ class MainActivity : AppCompatActivity() {
         val drawerlayout : DrawerLayout = binding.drawerlayout
         val navview : NavigationView = binding.navView
 
-        loadProfile()
+//        loadProfile()
 
 
         binding.profileBtn.setOnClickListener{
@@ -74,5 +73,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun loadProfile(){
         val user = auth.currentUser
+        val userreference = database?.child(user?.uid!!)
+
     }
 }
