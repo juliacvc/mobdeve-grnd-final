@@ -11,19 +11,33 @@ import androidx.drawerlayout.widget.DrawerLayout
 import androidx.navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.navigation.NavigationView
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.*
 import com.mobdeve.s11.mco2.deleon.coronel.grnd.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
     lateinit var binding: ActivityMainBinding
 
+    private lateinit var database: DatabaseReference
+    var firebase: FirebaseDatabase?  =null
+    lateinit var auth: FirebaseAuth
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        auth = FirebaseAuth.getInstance()
+        database = FirebaseDatabase.getInstance().getReference("Users")
+        firebase = FirebaseDatabase.getInstance()
+
         val drawerlayout : DrawerLayout = binding.drawerlayout
         val navview : NavigationView = binding.navView
+
+//        loadProfile()
+
 
         binding.profileBtn.setOnClickListener{
             drawerlayout.openDrawer(GravityCompat.START)
@@ -42,8 +56,8 @@ class MainActivity : AppCompatActivity() {
                     Toast.LENGTH_SHORT
                 ).show()
                 R.id.nav_logout -> {
+                    auth.signOut()
                     var goToLoginActivity = Intent(applicationContext, LoginActivity::class.java)
-
                     startActivity(goToLoginActivity)
                     finish()
                 }
@@ -56,5 +70,11 @@ class MainActivity : AppCompatActivity() {
         val navController = findNavController(R.id.fragment)
 
         bottomNavigationView.setupWithNavController(navController)
+    }
+
+    private fun loadProfile(){
+        val user = auth.currentUser
+        val userreference = database?.child(user?.uid!!)
+
     }
 }

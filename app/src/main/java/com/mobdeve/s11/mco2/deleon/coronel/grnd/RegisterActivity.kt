@@ -4,19 +4,31 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
 import com.mobdeve.s11.mco2.deleon.coronel.grnd.databinding.ActivityRegisterBinding
 import com.mobdeve.s11.mco2.deleon.coronel.grnd.models.User
 
 class RegisterActivity : AppCompatActivity() {
     private lateinit var binding: ActivityRegisterBinding
+    private lateinit var auth: FirebaseAuth
     private lateinit var database: DatabaseReference
+    private lateinit var firebase: FirebaseDatabase
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityRegisterBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        auth = FirebaseAuth.getInstance()
+        firebase = FirebaseDatabase.getInstance()
+        database = FirebaseDatabase.getInstance().getReference("Users")
+
+        register()
+    }
+
+    private fun register() {
         binding.registerBtn.setOnClickListener {
             var goToMainActivity = Intent(applicationContext, MainActivity::class.java)
 
@@ -38,24 +50,24 @@ class RegisterActivity : AppCompatActivity() {
                 val email = binding.emailaddress.text.toString()
                 val password = binding.password.text.toString()
 
-                database = FirebaseDatabase.getInstance().getReference("Users")
-                val user = User(firstname, lastname, gender, birthday, contactnumber, email, password)
+                auth.createUserWithEmailAndPassword(email, password).addOnCompleteListener{
+                    if(it.isSuccessful) {
+                        val currentUser = auth.currentUser
 
-                database.child(firstname).setValue(user).addOnSuccessListener {
-                    //Clear text fields
-//                    binding.firstname.text.clear()
-//                    binding.lastname.text.clear()
-//                    binding.gender.text.clear()
-//                    binding.birthday.text.clear()
-//                    binding.contactnumber.text.clear()
-//                    binding.password.text.clear()
-//                    binding.confassword.text.clear()
+                        val user = User(firstname, lastname, gender, birthday, contactnumber, email, password)
 
-                    Toast.makeText(applicationContext, "Success", Toast.LENGTH_LONG).show()
+                        database.child(currentUser?.uid!!).setValue(user).addOnSuccessListener {
 
-                    startActivity(goToMainActivity)
-                    finish()
+                            Toast.makeText(applicationContext, "Success", Toast.LENGTH_LONG).show()
+
+                            startActivity(goToMainActivity)
+                            finish()
+                        }
+                    } else {
+                        Toast.makeText(applicationContext, "Registration failed, please try again!", Toast.LENGTH_SHORT).show()
+                    }
                 }
+
             }
         }
     }
