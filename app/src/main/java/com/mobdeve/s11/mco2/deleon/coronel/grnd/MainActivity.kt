@@ -29,6 +29,7 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        auth = FirebaseAuth.getInstance()
         database = FirebaseDatabase.getInstance().getReference("Users")
         firebase = FirebaseDatabase.getInstance()
 
@@ -55,8 +56,8 @@ class MainActivity : AppCompatActivity() {
                     Toast.LENGTH_SHORT
                 ).show()
                 R.id.nav_logout -> {
+                    auth.signOut()
                     var goToLoginActivity = Intent(applicationContext, LoginActivity::class.java)
-
                     startActivity(goToLoginActivity)
                     finish()
                 }
