@@ -49,6 +49,7 @@ class WorkoutActivity : YouTubeBaseActivity() {
                 p1?.loadVideo(youtubeLink)
             }
 
+
             override fun onInitializationFailure(
                 p0: YouTubePlayer.Provider?,
                 p1: YouTubeInitializationResult?
