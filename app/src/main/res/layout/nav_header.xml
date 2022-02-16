@@ -6,28 +6,34 @@
     android:orientation="vertical"
     android:layout_marginTop="16dp"
     android:layout_marginStart="16dp"
-    android:background="@color/white">
+    android:background="#4FBDBA">
 
-    <de.hdodenhof.circleimageview.CircleImageView
+<!--    <de.hdodenhof.circleimageview.CircleImageView-->
+<!--        android:layout_width="60dp"-->
+<!--        android:layout_height="60dp" />-->
+
+    <ImageView
+        android:id="@+id/profileBtn"
         android:layout_width="60dp"
-        android:layout_height="60dp" />
+        android:layout_height="60dp"
+        android:src="@drawable/ic_account"
+        android:background="@null" />
 
     <TextView
+        android:id="@+id/user_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/user_name"
         android:paddingTop="8dp"
         android:textSize="20sp"
-        android:text="Robin Singla"
         android:textColor="@color/black"
         android:textStyle="bold"
         android:fontFamily="@font/roboto"/>
 
     <TextView
+        android:id="@+id/email"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="16sp"
-        android:text="robinsinglagmail.com"
         android:fontFamily="@font/roboto_black_italic"/>
 
     <View

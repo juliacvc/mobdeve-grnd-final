@@ -3,7 +3,10 @@ package com.mobdeve.s11.mco2.deleon.coronel.grnd
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.provider.ContactsContract
 import android.view.Gravity
+import android.view.View
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.core.view.GravityCompat
@@ -18,11 +21,9 @@ import com.mobdeve.s11.mco2.deleon.coronel.grnd.databinding.ActivityMainBinding
 class MainActivity : AppCompatActivity() {
 
     lateinit var binding: ActivityMainBinding
-
     private lateinit var database: DatabaseReference
-    var firebase: FirebaseDatabase?  =null
+    private lateinit var firebase: FirebaseDatabase
     lateinit var auth: FirebaseAuth
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,11 +34,36 @@ class MainActivity : AppCompatActivity() {
         database = FirebaseDatabase.getInstance().getReference("Users")
         firebase = FirebaseDatabase.getInstance()
 
+        loadHeaderInfo()
+        navigation()
+    }
+
+    private fun loadHeaderInfo(){
+        var headerView : View = binding.navView.getHeaderView(0)
+        var userName : TextView = headerView.findViewById(R.id.user_name)
+        var email : TextView = headerView.findViewById(R.id.email)
+
+        //Get currentuser details
+        val user = auth.currentUser
+        val dbref = database.child(user?.uid!!)
+
+        email.text = user.email
+
+        //Get realtime database information of user
+        dbref.addValueEventListener(object: ValueEventListener {
+            override fun onDataChange(snapshot: DataSnapshot) {
+                userName.text = "${snapshot.child("firstname").value.toString()} ${snapshot.child("lastname").value.toString()}"
+            }
+
+            override fun onCancelled(error: DatabaseError) {
+                TODO("Not yet implemented")
+            }
+        })
+    }
+
+    private fun navigation() {
         val drawerlayout : DrawerLayout = binding.drawerlayout
         val navview : NavigationView = binding.navView
-
-//        loadProfile()
-
 
         binding.profileBtn.setOnClickListener{
             drawerlayout.openDrawer(GravityCompat.START)
@@ -45,11 +71,10 @@ class MainActivity : AppCompatActivity() {
 
         navview.setNavigationItemSelectedListener {
             when (it.itemId) {
-                R.id.nav_profile -> Toast.makeText(
-                    applicationContext,
-                    "Clicked Profile",
-                    Toast.LENGTH_SHORT
-                ).show()
+                R.id.nav_profile -> {
+                    var gotoProfileActivity = Intent(applicationContext, ProfileActivity::class.java)
+                    startActivity(gotoProfileActivity)
+                }
                 R.id.nav_settings -> Toast.makeText(
                     applicationContext,
                     "clicked Settings",
@@ -70,11 +95,5 @@ class MainActivity : AppCompatActivity() {
         val navController = findNavController(R.id.fragment)
 
         bottomNavigationView.setupWithNavController(navController)
-    }
-
-    private fun loadProfile(){
-        val user = auth.currentUser
-        val userreference = database?.child(user?.uid!!)
-
     }
 }
