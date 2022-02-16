@@ -59,12 +59,12 @@ class WorkoutActivity : YouTubeBaseActivity() {
         }
 
         binding.workoutTitle.text = name
-        val storageRef = FirebaseStorage.getInstance().reference.child("Workouts/${image}.jpeg")
-        val localfile = File.createTempFile("tempImage", "jpeg")
-        storageRef.getFile(localfile).addOnSuccessListener {
-            val bitmap = BitmapFactory.decodeFile(localfile.absolutePath)
-            binding.workoutImage.setImageBitmap(bitmap)
-        }
+//        val storageRef = FirebaseStorage.getInstance().reference.child("Workouts/${image}.jpeg")
+//        val localfile = File.createTempFile("tempImage", "jpeg")
+//        storageRef.getFile(localfile).addOnSuccessListener {
+//            val bitmap = BitmapFactory.decodeFile(localfile.absolutePath)
+//            binding.workoutImage.setImageBitmap(bitmap)
+//        }
         binding.workoutType.text = "$category, $level"
         binding.descriptionText.text = description
         binding.durationText.text = "$duration minutes"
