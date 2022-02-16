@@ -31,10 +31,13 @@
         </activity>
         <activity
             android:name=".RegisterActivity"
-            android:exported="true"></activity>
+            android:exported="true"/>
         <activity
             android:name=".MainActivity"
-            android:exported="true"></activity>
+            android:exported="true"/>
+        <activity
+            android:name=".ProfileActivity"
+            android:exported="true"/>
 
         <service android:name=".main_nav.TimerService" />
 
