@@ -29,6 +29,13 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"/>
 
+<!--    <fragment-->
+<!--        android:name="com.google.android.youtube.player.YouTubePlayerSupportFragment"-->
+<!--        android:id="@+id/youtubePlayer"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        app:layout_constraintTop_toBottomOf="@id/workoutTitle"/>-->
+
     <com.google.android.youtube.player.YouTubePlayerView
         android:id="@+id/youtubePlayer"
         android:layout_width="match_parent"

@@ -37,8 +37,8 @@ class WorkoutActivity : YouTubeBaseActivity() {
         var equipment = bundle!!.getString("equipment")
         var youtubeLink = bundle!!.getString("youtubeLink")
 
-        youtubePlayer = findViewById(R.id.youtubePlayer)
-        btnStart = findViewById(R.id.btnStart)
+        youtubePlayer = binding.youtubePlayer
+        btnStart = binding.btnStart
 
         youtubePlayerInit = object : YouTubePlayer.OnInitializedListener{
             override fun onInitializationSuccess(
