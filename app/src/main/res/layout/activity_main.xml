@@ -103,7 +103,8 @@
         android:layout_gravity="start"
         app:headerLayout="@layout/nav_header"
         app:menu="@menu/nav_menu"
-        android:fitsSystemWindows="true" />
+        android:fitsSystemWindows="true"
+        android:background="#4FBDBA"/>
 
 </androidx.drawerlayout.widget.DrawerLayout>
 

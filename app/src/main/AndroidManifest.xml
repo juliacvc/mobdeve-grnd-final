@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.GRND">
         <activity
+            android:name=".ProfileActivity"
+            android:exported="false" />
+        <activity
             android:name=".WorkoutActivity"
             android:exported="false" />
         <activity
@@ -23,10 +26,10 @@
         </activity>
         <activity
             android:name=".RegisterActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".MainActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
 
         <service android:name=".main_nav.TimerService" />
 
@@ -34,4 +37,5 @@
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
     </application>
+
 </manifest>

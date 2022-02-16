@@ -24,6 +24,14 @@ class LoginActivity : AppCompatActivity() {
         database = FirebaseDatabase.getInstance().getReference("Users")
         firebase = FirebaseDatabase.getInstance()
 
+        val goToMainActivity = Intent(applicationContext, MainActivity::class.java)
+
+        val currentuser = auth.currentUser
+        if(currentuser != null) {
+            startActivity(goToMainActivity)
+            finish()
+        }
+
         binding.registerBtn.setOnClickListener{
             val goToRegisterActivity = Intent(applicationContext, RegisterActivity::class.java)
 
@@ -31,8 +39,6 @@ class LoginActivity : AppCompatActivity() {
         }
 
         binding.loginBtn.setOnClickListener{
-            val goToMainActivity = Intent(applicationContext, MainActivity::class.java)
-
             if(binding.emailaddress.text.isEmpty() || binding.password.text.isEmpty() ) {
                 Toast.makeText(applicationContext, "Incorrect user details. Kindly try again.", Toast.LENGTH_LONG).show()
             }

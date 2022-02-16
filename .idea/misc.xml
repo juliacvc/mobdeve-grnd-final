@@ -6,6 +6,7 @@
         <entry key="..\:/AndroidStudioProjects/GRND/app/src/main/res/drawable/custom_input.xml" value="0.2703125" />
         <entry key="..\:/AndroidStudioProjects/GRND/app/src/main/res/layout/activity_login.xml" value="0.4742468415937804" />
         <entry key="..\:/AndroidStudioProjects/GRND/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
+        <entry key="..\:/AndroidStudioProjects/GRND/app/src/main/res/layout/activity_profile.xml" value="0.25416666666666665" />
         <entry key="..\:/AndroidStudioProjects/GRND/app/src/main/res/layout/activity_register.xml" value="0.4" />
         <entry key="..\:/AndroidStudioProjects/GRND/app/src/main/res/layout/activity_workout.xml" value="0.24010416666666667" />
         <entry key="..\:/AndroidStudioProjects/GRND/app/src/main/res/layout/custom_popup_dialogue.xml" value="0.25416666666666665" />
@@ -18,6 +19,7 @@
         <entry key="..\:/AndroidStudioProjects/GRND/app/src/main/res/layout/fragment_workout_page.xml" value="0.264" />
         <entry key="..\:/AndroidStudioProjects/GRND/app/src/main/res/layout/fragment_workout_plans.xml" value="0.25416666666666665" />
         <entry key="..\:/AndroidStudioProjects/GRND/app/src/main/res/layout/fragment_workouts.xml" value="0.25416666666666665" />
+        <entry key="..\:/AndroidStudioProjects/GRND/app/src/main/res/layout/nav_header.xml" value="0.25416666666666665" />
         <entry key="..\:/AndroidStudioProjects/GRND/app/src/main/res/layout/news_row.xml" value="0.25416666666666665" />
         <entry key="..\:/AndroidStudioProjects/GRND/app/src/main/res/layout/workouts_list_row.xml" value="0.25416666666666665" />
         <entry key="..\:/AndroidStudioProjects/GRND/app/src/main/res/layout/workouts_row.xml" value="0.25416666666666665" />
