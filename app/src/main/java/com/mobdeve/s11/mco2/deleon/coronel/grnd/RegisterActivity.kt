@@ -54,7 +54,7 @@ class RegisterActivity : AppCompatActivity() {
                     if(it.isSuccessful) {
                         val currentUser = auth.currentUser
 
-                        val user = User(firstname, lastname, gender, birthday, contactnumber, email, password)
+                        val user = User(firstname, lastname, gender, birthday, contactnumber, email, password, null)
 
                         database.child(currentUser?.uid!!).setValue(user).addOnSuccessListener {
 

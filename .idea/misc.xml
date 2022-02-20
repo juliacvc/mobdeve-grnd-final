@@ -9,8 +9,11 @@
         <entry key="..\:/AndroidStudioProjects/GRND/app/src/main/res/layout/activity_profile.xml" value="0.25416666666666665" />
         <entry key="..\:/AndroidStudioProjects/GRND/app/src/main/res/layout/activity_register.xml" value="0.4" />
         <entry key="..\:/AndroidStudioProjects/GRND/app/src/main/res/layout/activity_workout.xml" value="0.24010416666666667" />
+        <entry key="..\:/AndroidStudioProjects/GRND/app/src/main/res/layout/category_list_row.xml" value="0.25416666666666665" />
         <entry key="..\:/AndroidStudioProjects/GRND/app/src/main/res/layout/custom_popup_dialogue.xml" value="0.25416666666666665" />
         <entry key="..\:/AndroidStudioProjects/GRND/app/src/main/res/layout/fragment_activity.xml" value="0.25416666666666665" />
+        <entry key="..\:/AndroidStudioProjects/GRND/app/src/main/res/layout/fragment_activity_list.xml" value="0.25416666666666665" />
+        <entry key="..\:/AndroidStudioProjects/GRND/app/src/main/res/layout/fragment_badges.xml" value="0.25416666666666665" />
         <entry key="..\:/AndroidStudioProjects/GRND/app/src/main/res/layout/fragment_blank.xml" value="0.25416666666666665" />
         <entry key="..\:/AndroidStudioProjects/GRND/app/src/main/res/layout/fragment_custom_dialog.xml" value="0.264" />
         <entry key="..\:/AndroidStudioProjects/GRND/app/src/main/res/layout/fragment_home.xml" value="0.25416666666666665" />
@@ -21,6 +24,7 @@
         <entry key="..\:/AndroidStudioProjects/GRND/app/src/main/res/layout/fragment_workouts.xml" value="0.25416666666666665" />
         <entry key="..\:/AndroidStudioProjects/GRND/app/src/main/res/layout/nav_header.xml" value="0.25416666666666665" />
         <entry key="..\:/AndroidStudioProjects/GRND/app/src/main/res/layout/news_row.xml" value="0.25416666666666665" />
+        <entry key="..\:/AndroidStudioProjects/GRND/app/src/main/res/layout/workout_list_row.xml" value="0.25416666666666665" />
         <entry key="..\:/AndroidStudioProjects/GRND/app/src/main/res/layout/workouts_list_row.xml" value="0.25416666666666665" />
         <entry key="..\:/AndroidStudioProjects/GRND/app/src/main/res/layout/workouts_row.xml" value="0.25416666666666665" />
         <entry key="..\:/AndroidStudioProjects/GRND/app/src/main/res/layout/workouts_row_popup.xml" value="0.25416666666666665" />
