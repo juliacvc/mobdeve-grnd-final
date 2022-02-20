@@ -14,6 +14,6 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         app:layout_constraintTop_toTopOf="parent"
-        tools:listitem="@layout/workouts_list_row" />
+        tools:listitem="@layout/category_list_row" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

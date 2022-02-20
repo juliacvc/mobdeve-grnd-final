@@ -4,17 +4,15 @@ import android.content.Context
 import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
-import com.google.android.material.snackbar.Snackbar
-import com.mobdeve.s11.mco2.deleon.coronel.grnd.databinding.WorkoutsListRowBinding
+import com.mobdeve.s11.mco2.deleon.coronel.grnd.databinding.CategoryListRowBinding
 import com.mobdeve.s11.mco2.deleon.coronel.grnd.models.CategoryModel
 
 class CategoryAdapter(var context: Context,
                       private val workoutList: ArrayList<CategoryModel?>,
                       private val onItemClicked: (CategoryModel)->Unit
 ): RecyclerView.Adapter<CategoryAdapter.ViewHolder>() {
-    inner class ViewHolder(private val itemBinding: WorkoutsListRowBinding): RecyclerView.ViewHolder(itemBinding.root) {
+    inner class ViewHolder(private val itemBinding: CategoryListRowBinding): RecyclerView.ViewHolder(itemBinding.root) {
 
         fun bindItem(item: CategoryModel, position: Int) {
             itemBinding.workoutItem.text = item.name
@@ -35,7 +33,7 @@ class CategoryAdapter(var context: Context,
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val itemBinding = WorkoutsListRowBinding
+        val itemBinding = CategoryListRowBinding
             .inflate(LayoutInflater.from(parent.context), parent, false)
 
         return ViewHolder(itemBinding)

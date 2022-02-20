@@ -8,4 +8,5 @@ data class User(
     var contactnumber: String,
     var email: String,
     var password: String,
+    var Workouts: ArrayList<WorkoutModel>?
 )
