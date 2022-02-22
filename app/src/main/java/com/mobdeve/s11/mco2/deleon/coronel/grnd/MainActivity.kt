@@ -86,6 +86,11 @@ class MainActivity : AppCompatActivity() {
                     startActivity(goToLoginActivity)
                     finish()
                 }
+                R.id.nav_feedback -> {
+//                    var goToFeedbackActivity = Intent(applicationContext, FeedbackActivity::class.java)
+//                    startActivity(goToFeedbackActivity)
+//                    finish()
+                }
             }
 
             true
