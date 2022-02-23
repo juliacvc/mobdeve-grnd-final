@@ -9,7 +9,7 @@ import com.mobdeve.s11.mco2.deleon.coronel.grnd.databinding.WorkoutsRowBinding
 import com.mobdeve.s11.mco2.deleon.coronel.grnd.models.WorkoutPlanModel
 import java.io.File
 
-class PlansAdapter(private val workoutList: ArrayList<WorkoutPlanModel?>): RecyclerView.Adapter<PlansAdapter.ViewHolder>() {
+class OngoingPlansAdapter(private val workoutList: ArrayList<WorkoutPlanModel?>): RecyclerView.Adapter<OngoingPlansAdapter.ViewHolder>() {
     inner class ViewHolder(private val itemBinding: WorkoutsRowBinding): RecyclerView.ViewHolder(itemBinding.root) {
 
         val image = itemBinding.workoutImage
