@@ -21,6 +21,10 @@ class FeedbackActivity: AppCompatActivity() {
         binding = ActivityFeedbackBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        auth = FirebaseAuth.getInstance()
+        firebase = FirebaseDatabase.getInstance()
+        database = FirebaseDatabase.getInstance().getReference("Feedback")
+
         binding.returnBtn.setOnClickListener{
             var goToMainActivity = Intent(applicationContext, MainActivity::class.java)
             startActivity(goToMainActivity)
@@ -35,6 +39,9 @@ class FeedbackActivity: AppCompatActivity() {
             }
             else{
                 val feedback = binding.feedback.text.toString()
+
+                val currentUser = auth.currentUser
+                database.child(currentUser?.uid!!).child("feedback").setValue(feedback)
 
                 Toast.makeText(applicationContext, "Feedback sent!", Toast.LENGTH_LONG).show()
                 startActivity(goToMainActivity)

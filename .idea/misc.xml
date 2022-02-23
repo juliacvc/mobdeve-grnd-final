@@ -4,6 +4,8 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/AndroidStudioProjects/GRND/app/src/main/res/drawable/custom_input.xml" value="0.2703125" />
+        <entry key="..\:/AndroidStudioProjects/GRND/app/src/main/res/drawable/custom_input2.xml" value="0.2703125" />
+        <entry key="..\:/AndroidStudioProjects/GRND/app/src/main/res/layout/activity_feedback.xml" value="0.25416666666666665" />
         <entry key="..\:/AndroidStudioProjects/GRND/app/src/main/res/layout/activity_login.xml" value="0.4742468415937804" />
         <entry key="..\:/AndroidStudioProjects/GRND/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
         <entry key="..\:/AndroidStudioProjects/GRND/app/src/main/res/layout/activity_profile.xml" value="0.25416666666666665" />
