@@ -3,12 +3,9 @@ package com.mobdeve.s11.mco2.deleon.coronel.grnd
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.provider.ContactsContract
-import android.view.Gravity
 import android.view.View
 import android.widget.TextView
 import android.widget.Toast
-import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.navigation.findNavController
@@ -86,6 +83,11 @@ class MainActivity : AppCompatActivity() {
                     startActivity(goToLoginActivity)
                     finish()
                 }
+                R.id.nav_feedback -> {
+                    var goToFeedbackActivity = Intent(applicationContext, FeedbackActivity::class.java)
+                    startActivity(goToFeedbackActivity)
+                    finish()
+                }
             }
 
             true
@@ -95,5 +97,7 @@ class MainActivity : AppCompatActivity() {
         val navController = findNavController(R.id.fragment)
 
         bottomNavigationView.setupWithNavController(navController)
+
     }
+
 }
