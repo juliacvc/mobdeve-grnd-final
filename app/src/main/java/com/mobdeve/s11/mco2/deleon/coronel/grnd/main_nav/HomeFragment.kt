@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.database.*
 import com.mobdeve.s11.mco2.deleon.coronel.grnd.adapters.NewsAdapter
-import com.mobdeve.s11.mco2.deleon.coronel.grnd.adapters.PlansAdapter
+import com.mobdeve.s11.mco2.deleon.coronel.grnd.adapters.OngoingPlansAdapter
 import com.mobdeve.s11.mco2.deleon.coronel.grnd.databinding.FragmentHomeBinding
 import com.mobdeve.s11.mco2.deleon.coronel.grnd.models.NewsModel
 import com.mobdeve.s11.mco2.deleon.coronel.grnd.models.WorkoutPlanModel
@@ -72,9 +72,9 @@ class HomeFragment : Fragment() {
 
             override fun onDataChange(snapshot: DataSnapshot) {
                 for (planSnapshot in snapshot.children) {
-                    val plan = WorkoutPlanModel(planSnapshot.child("image").value.toString())
+                    val plan = WorkoutPlanModel(planSnapshot.child("image").value.toString(), null, null, null)
                     plansList.add(plan)
-                    plansRecyclerView.adapter = PlansAdapter(plansList)
+                    plansRecyclerView.adapter = OngoingPlansAdapter(plansList)
                 }
             }
 

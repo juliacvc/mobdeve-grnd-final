@@ -6,41 +6,56 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.mobdeve.s11.mco2.deleon.coronel.grnd.R
-import com.mobdeve.s11.mco2.deleon.coronel.grnd.adapters.CategoryAdapter
-import com.mobdeve.s11.mco2.deleon.coronel.grnd.dao.CategoryDAO
-import com.mobdeve.s11.mco2.deleon.coronel.grnd.dao.CategoryDaoArrayList
-import com.mobdeve.s11.mco2.deleon.coronel.grnd.databinding.FragmentWorkoutListBinding
+import androidx.recyclerview.widget.RecyclerView
+import com.google.firebase.database.*
+import com.mobdeve.s11.mco2.deleon.coronel.grnd.adapters.WorkoutPlansAdapter
 import com.mobdeve.s11.mco2.deleon.coronel.grnd.databinding.FragmentWorkoutPlansBinding
-import com.mobdeve.s11.mco2.deleon.coronel.grnd.models.CategoryModel
+import com.mobdeve.s11.mco2.deleon.coronel.grnd.models.WorkoutPlanModel
 
 class WorkoutPlansFragment : Fragment() {
-    private lateinit var categoryAdapter: CategoryAdapter
     private lateinit var binding: FragmentWorkoutPlansBinding
-    var workoutList = ArrayList<CategoryModel?>()
-    var workoutDAO: CategoryDAO = CategoryDaoArrayList()
+    private lateinit var plansRecyclerView: RecyclerView
+    var plansList = ArrayList<WorkoutPlanModel?>()
+    private lateinit var database: DatabaseReference
+    private lateinit var firebase: FirebaseDatabase
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = FragmentWorkoutPlansBinding.inflate(inflater, container, false)
         val view = binding.root
 
-        populateList()
+        firebase = FirebaseDatabase.getInstance()
+        database = FirebaseDatabase.getInstance().getReference("Workout Plans")
 
-        categoryAdapter = CategoryAdapter(requireActivity(), workoutList) { clickedItem ->
-            val dialog = CustomDialogFragment(clickedItem.name)
-            dialog.show(requireActivity().supportFragmentManager, "customDialog")
-        }
+        plansRecyclerView = binding.workoutPlanView
+        plansRecyclerView.layoutManager = LinearLayoutManager(activity, LinearLayoutManager.VERTICAL, false)
 
-        binding.workoutPlanView.layoutManager = LinearLayoutManager(activity, LinearLayoutManager.VERTICAL, false)
-        binding.workoutPlanView.adapter = categoryAdapter
+        loadPlans()
 
         return view
     }
 
-    fun populateList() {
-        workoutList = workoutDAO.getWorkouts()!!
+    private fun loadPlans() {
+        database.addValueEventListener(object : ValueEventListener {
+            override fun onDataChange(snapshot: DataSnapshot) {
+                for (planSnapshot in snapshot.children) {
+                    val plan = WorkoutPlanModel(null,
+                                                planSnapshot.child("name").value.toString(),
+                                                planSnapshot.child("description").value.toString(),
+                                                null)
+                    plansList.add(plan)
+                    plansRecyclerView.adapter = WorkoutPlansAdapter(requireActivity(), plansList) { currentItem ->
+                        val dialog = PlansDialogFragment(currentItem.name!!)
+                        dialog.show(requireActivity().supportFragmentManager, "customDialog")
+                    }
+                }
+            }
+
+            override fun onCancelled(error: DatabaseError) {
+                TODO("Not yet implemented")
+            }
+        })
     }
 }

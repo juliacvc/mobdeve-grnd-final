@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    android:id="@+id/workoutPlan"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="95dp" >
+
+    <TextView
+        android:id="@+id/planName"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/roboto_bold_italic"
+        android:layout_gravity="top"
+        android:gravity="center"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/planDescription"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:padding="5dp"
+        android:fontFamily="@font/roboto"
+        android:layout_gravity="bottom"
+        android:gravity="center"
+        android:textSize="10sp" />
+</androidx.cardview.widget.CardView>

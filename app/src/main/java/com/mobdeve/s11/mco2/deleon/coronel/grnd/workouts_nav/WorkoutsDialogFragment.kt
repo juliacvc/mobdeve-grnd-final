@@ -12,7 +12,7 @@ import com.mobdeve.s11.mco2.deleon.coronel.grnd.adapters.WorkoutAdapter
 import com.mobdeve.s11.mco2.deleon.coronel.grnd.databinding.FragmentCustomDialogBinding
 import com.mobdeve.s11.mco2.deleon.coronel.grnd.models.WorkoutModel
 
-class CustomDialogFragment(title: String): DialogFragment() {
+class WorkoutsDialogFragment(title: String): DialogFragment() {
     private lateinit var binding: FragmentCustomDialogBinding
     private lateinit var dbref: DatabaseReference
     private lateinit var workoutsRecyclerView: RecyclerView
