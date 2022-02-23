@@ -5,16 +5,14 @@ import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.mobdeve.s11.mco2.deleon.coronel.grnd.databinding.CategoryListRowBinding
 import com.mobdeve.s11.mco2.deleon.coronel.grnd.databinding.PlansListRowBinding
-import com.mobdeve.s11.mco2.deleon.coronel.grnd.models.CategoryModel
 import com.mobdeve.s11.mco2.deleon.coronel.grnd.models.WorkoutPlanModel
 
 class WorkoutPlansAdapter(var context: Context,
                       private val plansList: ArrayList<WorkoutPlanModel?>,
                       private val onItemClicked: (WorkoutPlanModel)->Unit
 ): RecyclerView.Adapter<WorkoutPlansAdapter.ViewHolder>() {
-    inner class ViewHolder(private val itemBinding: PlansListRowBinding): RecyclerView.ViewHolder(itemBinding.root) {
+    inner class ViewHolder(itemBinding: PlansListRowBinding): RecyclerView.ViewHolder(itemBinding.root) {
 
         val name = itemBinding.planName
         val description = itemBinding.planDescription

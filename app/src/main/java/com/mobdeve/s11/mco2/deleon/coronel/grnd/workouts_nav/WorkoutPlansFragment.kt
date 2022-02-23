@@ -1,7 +1,6 @@
 package com.mobdeve.s11.mco2.deleon.coronel.grnd.workouts_nav
 
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -9,7 +8,6 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.database.*
-import com.mobdeve.s11.mco2.deleon.coronel.grnd.adapters.CategoryAdapter
 import com.mobdeve.s11.mco2.deleon.coronel.grnd.adapters.WorkoutPlansAdapter
 import com.mobdeve.s11.mco2.deleon.coronel.grnd.databinding.FragmentWorkoutPlansBinding
 import com.mobdeve.s11.mco2.deleon.coronel.grnd.models.WorkoutPlanModel
@@ -24,7 +22,7 @@ class WorkoutPlansFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = FragmentWorkoutPlansBinding.inflate(inflater, container, false)
         val view = binding.root
 

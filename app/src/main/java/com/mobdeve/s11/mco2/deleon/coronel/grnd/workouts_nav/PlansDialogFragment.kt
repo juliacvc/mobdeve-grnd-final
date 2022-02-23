@@ -11,7 +11,6 @@ import com.google.firebase.database.*
 import com.mobdeve.s11.mco2.deleon.coronel.grnd.adapters.WorkoutAdapter
 import com.mobdeve.s11.mco2.deleon.coronel.grnd.databinding.FragmentCustomDialogBinding
 import com.mobdeve.s11.mco2.deleon.coronel.grnd.models.WorkoutModel
-import com.mobdeve.s11.mco2.deleon.coronel.grnd.models.WorkoutPlanModel
 
 class PlansDialogFragment(name: String): DialogFragment() {
     private lateinit var binding: FragmentCustomDialogBinding
@@ -24,7 +23,7 @@ class PlansDialogFragment(name: String): DialogFragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = FragmentCustomDialogBinding.inflate(inflater, container, false)
         val view = binding.root
         return view
